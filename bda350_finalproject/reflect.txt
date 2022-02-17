@@ -1,0 +1,32 @@
+1. The data structure used to write this project was a dictionary.  This structure was chosen due to the associative
+nature of the project where a word was to be associated with its anagram and frequency.  The dictionary offers data
+to be stored in key value pairs, which allows for effective access of a key's value.
+
+2.  The time complexity for part 1 is linear O(n). One method that could improve the time complexity could be done in
+the data cleaning process.  The current program iterates through all of the words in the text, including words that have
+already occurred.  For example, the word 'stay' may be observed several times throughout the book, and will all be
+included in iteration to create the dictionary.  Instead, in the data cleaning process, a dictionary could be created
+that includes {word: freq} where any word that is repeated will just be incremented by 1 in the dictionary.  The anagram
+creation method will take the dictionary created in the cleaning process, and iterate through its keys which will
+conveniently contain all words from the novel only once.  The frequencies will already be generated as values from the
+previous dictionary and can be utilized accordingly for the anagram's frequencies.  This will reduce the overall number
+of iterations needed to create the anagram finder.
+
+3. The time complexity for part 2 is linear O(n).  One method that could improve the time complexity is to store the
+anagrams in 2 dictionaries: one containing 1-word anagrams {'aemn': 14}, and the other containing 2-word anagrams
+{'aemn': {'mean': 14, 'name': 12}}, where the sorted word is used as a key in each.  Currently, the program takes 1 and
+2 word anagrams and store them in a nested dictionary (ex., {'aemn':{'name': 14}}.  The new 1-word dictionary will take
+the form of {'aemn': 14} and the 2-word dictionary will remain in the current format.  Therefore, when a key is searched
+it will examine words in the 1-word dictionary first and return its frequency. Otherwise, it will search the 2-word
+dictionary.  This will reduce the time from O(2n) to O(n) in some cases where the best case can be O(1).
+
+
+4. Upon completion of this project, we have learned the importance of selecting the most effective data structure that
+is relevant to the task.  With this comes consideration of several factors such as the way in which the data will be
+stored; for instance a list, array, dictionary.  This can help determine what method will best store the task data.
+Other factors that needed to be considered were time complexity.  This was the most challenging portion of the
+assignment because it required us to be conscious about the way we wrote the program and chose the appropriate
+data structure. For instance, a list was an optional data structure that was considered; storing the data in a
+list of lists [['sorted_word1', 'anagram', freq], ['sorted_word2', 'anagram', freq]]. But when taking into account
+time complexity for searches, dictionaries offer a hashing strategy that would be more efficient for the task.
+Therefore, these time complexity considerations made the data structure selection process require more thought.

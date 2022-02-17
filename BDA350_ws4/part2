@@ -1,0 +1,56 @@
+PART A
+
+for i in range(4):
+    s.push(2 * i)
+    s.push(3 * i)
+
+0, 0, 2, 3, 4, 6, 6, 9
+
+PART B
+
+for i in range(4):
+    s.push(s.pop() - s.pop())
+
+OUTPUT:
+1st iteration:
+0, 0, 2, 3, 4, 6
+popped items = 9 - 6
+pushed item = 3
+0, 0, 2, 3, 4, 6, 3
+
+2nd iteration:
+0, 0, 2, 3, 4
+popped items = 3 - 6
+pushed item = -3
+0, 0, 2, 3, 4, -3
+
+3rd iteration:
+0, 0, 2, 3
+popped items = -3 - 4
+pushed item = -7
+0, 0, 2, 3, -7
+
+4th iteration:
+0, 0, 2
+popped items = -7 - 3
+pushed item = -10
+0, 0, 2, -10
+
+PART C
+
+for i in range(4):
+    s.pop()
+
+1st iteration:
+0, 0, 2
+
+2nd iteration:
+0, 0
+
+3rd iteration:
+0
+
+4th iteration:
+empty list/stack
+
+

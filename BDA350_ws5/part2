@@ -1,0 +1,32 @@
+q1 = 2, 5, 7, 4 == x
+q2 = 5, 7, 2 == y
+
+while q2 is not empty:
+
+dequeued items = 2 < 5 --> 2 x 5 = 10
+enqueue 10 to q1
+q1 = 5, 7, 4, 10
+q2 = 7, 2
+
+dequeued items = 5 < 7 --> 5 x 7 = 35
+enqueue 35 to q1
+q1 = 7, 4, 10, 35
+q2 = 2
+
+dequeued items = 7 x 2 = 14
+enqueue 14 to q2
+just because q1 value is larger than q2 value, it still executes this line, following this it executes the if statement.
+
+dequeued items = 7 > 2 --> 7 - 2 = 5
+enqueue 5 to q2
+q1 = 4, 10, 35, 14
+q2 = 5
+
+dequeued items = 4 < 5 --> 4 x 5 = 20
+enqueue 20 to q1
+
+q2 is empty, loop stops.
+
+FINAL RESULT 
+q1 = 10, 35, 14, 20
+q2 = []
