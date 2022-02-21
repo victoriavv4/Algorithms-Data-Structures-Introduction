@@ -1,6 +1,0 @@
-Bubble sort works by comparing pairs of values and swapping them one of the items is greater than the other
-(depending on the condition). Following the first iteration through the list, the largest item will be placed at the
-end of the list.  The algorithm until all values are placed in the correct order.  However, regardless of whether or
-not the items are sorted, the algorithm will still run.  In order to improve this algorithms time complexity, some kind
-of flag can be implemented in the inner loop which will notify when a swap has occurred.  If no 2 elements were swapped,
-the flag can be set to false and it wil exit the loop, avoiding redundant comparisons.
